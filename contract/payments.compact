@@ -1,0 +1,9 @@
+pragma language_version >= 0.14.0;
+
+import CompactStandardLibrary;
+
+export ledger state: Cell<Bytes<32>>;
+
+export circuit processPayment(recipient: Bytes<32>, amount: Uint<64>): Void {
+    state.write(recipient);
+}
